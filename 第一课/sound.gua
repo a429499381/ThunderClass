@@ -1,0 +1,69 @@
+const math = import("math")
+const wave = import("wave")
+
+
+const clamp = function(n) {
+    if (n > 255) {
+        n = 255
+    } else if (n < 0) {
+        n = 0
+    }
+    return n
+}
+
+// 假设学会声音编程
+// 用 C++ 需要 5 小时
+// 用 gualang 或者其他你熟悉的快速开发语言，可能需要 1 小时
+const chord = function(c) {
+    // 10k
+    var samplerequency = 10000
+    var frequency = c
+    var volume = 50
+    var samplesLength = int(samplerequency / 4)
+    var r = 2.0 * math.pi * frequency / samplerequency
+    var data = []
+    var i = 0
+    while (i < samplesLength) {
+        var v = 128 + int(volume * math.sin(i * r))
+        data.add(v)
+
+        i = i + 1
+    }
+    return data
+}
+
+const _main = function() {
+    // 参考资料
+    // https://pages.mtu.edu/~suits/notefreqs.html
+    var C4 = 261.63
+    var D4 = 293.66
+    var E4 = 329.63
+    var F4 = 349.23
+    var G4 = 392.00
+    var A4 = 440.00
+    var B4 = 493.88
+
+    // var melody = [E4]
+    // var melody = [E4, E4, F4, G4, G4, F4, E4, D4]
+    var melody = [E4, E4, F4, G4, G4, F4, E4, D4, C4, C4, D4, E4, E4, D4, D4]
+    // var melody = [E4, D4, C4, D4, E4, E4, E4]
+    var ds = []
+    var i = 0
+    while (i < melody.length()) {
+        var c = melody[i]
+        var d = chord(c)
+        ds += d
+
+        i = i + 1
+    }
+
+    const filepath = 'sound.wav'
+    wave.saveFileFromPcm(filepath, ds, 10000)
+}
+
+_main()
+
+// 所有人都不能出错的 C++ 作业方案
+// 1，在线运行
+// 2，网站是能够打开的
+// 3，文件不能乱码

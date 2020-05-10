@@ -1,0 +1,9 @@
+
+音频
+PcmFromAudioDeviec()
+PlayPcm()
+
+视频
+ScreenIage(x, y, w, h)
+WindowImage()
+WindowList()
