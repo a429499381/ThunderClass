@@ -17,11 +17,19 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    CGImageRef img = CGWindowListCreateImage(CGRectInfinite, kCGWindowListOptionOnScreenOnly, kCGNullWindowID, kCGWindowImageDefault);
+    CGImageRef img = CGWindowListCreateImage(CGRectMake(10, 50, 10, 10), kCGWindowListOptionOnScreenOnly,
+    kCGNullWindowID, kCGWindowImageDefault);
+
+    // 拿到原始像素数据
+    CGDataProviderRef provider =  CGImageGetDataProvider(img);
+    CFDataRef imageData = CGDataProviderCopyData(provider);
+    uint8_t *bytes = (uint8_t *)CFDataGetBytePtr(imageData);
+
+
     NSImage *image = [[NSImage alloc] initWithCGImage:img size:(NSZeroSize)];
     NSImageView *imgView = [NSImageView imageViewWithImage:image];
     //imgView.frame = CGRectMake(10, 30, 80, 60);
-    imgView.frame = CGRectMake(0, 50, 400, 400);
+    imgView.frame = CGRectMake(0, 0, 100, 100);
     NSLog(@"%f %f",
           image.size.width,
           imgView.frame.size.width

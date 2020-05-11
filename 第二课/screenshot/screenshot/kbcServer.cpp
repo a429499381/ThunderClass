@@ -41,9 +41,17 @@ server() {
 
 int
 main() {
-    server();
+   //server();
     
     return 0;
 }
 
 // 编译方法 c++ mac  clang++  *.cpp
+
+/*
+    颜色的表示
+    每个像素 4 字节
+    包含 r g b a
+    10 * 10 = 100
+    400 字节
+*/
