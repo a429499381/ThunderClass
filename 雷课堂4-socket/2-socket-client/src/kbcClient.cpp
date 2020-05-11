@@ -27,3 +27,5 @@ client() {
     int n = send(socketId, data, size, 0);
     log("send size ", n);
 }
+
+// 编译方法 clang++ kbcClient.cppp -o client.exe
