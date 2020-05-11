@@ -7,3 +7,14 @@ PlayPcm()
 ScreenIage(x, y, w, h)
 WindowImage()
 WindowList()
+
+网络
+GuaNet.send()
+GuaNet.recv()
+
+UI 
+写代码的方法
+
+while(true) {
+  ....
+}
