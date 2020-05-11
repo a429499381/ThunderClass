@@ -21,12 +21,13 @@
     NSImage *image = [[NSImage alloc] initWithCGImage:img size:(NSZeroSize)];
     NSImageView *imgView = [NSImageView imageViewWithImage:image];
     //imgView.frame = CGRectMake(10, 30, 80, 60);
-    imgView.frame = CGRectMake(10, 30, 400, 400);
+    imgView.frame = CGRectMake(0, 50, 400, 400);
     NSLog(@"%f %f",
           image.size.width,
           imgView.frame.size.width
           );
     [self.window.contentView addSubview:imgView];
+   // [NSAlert alertWithError:(@"abc")];
 }
 
 
