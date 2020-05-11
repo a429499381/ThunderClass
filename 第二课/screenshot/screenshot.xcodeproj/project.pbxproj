@@ -11,8 +11,6 @@
 		4203126D2469868A006F721D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4203126C2469868A006F721D /* Assets.xcassets */; };
 		420312702469868A006F721D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4203126E2469868A006F721D /* MainMenu.xib */; };
 		420312732469868A006F721D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 420312722469868A006F721D /* main.m */; };
-		4203127C2469929D006F721D /* kbcServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4203127A2469929D006F721D /* kbcServer.cpp */; };
-		4203127F24699867006F721D /* kbcClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4203127D24699867006F721D /* kbcClient.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +22,6 @@
 		420312712469868A006F721D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		420312722469868A006F721D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		420312742469868A006F721D /* screenshot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = screenshot.entitlements; sourceTree = "<group>"; };
-		4203127A2469929D006F721D /* kbcServer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = kbcServer.cpp; sourceTree = "<group>"; };
-		4203127B2469929D006F721D /* kbcServer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = kbcServer.hpp; sourceTree = "<group>"; };
-		4203127D24699867006F721D /* kbcClient.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = kbcClient.cpp; sourceTree = "<group>"; };
-		4203127E24699867006F721D /* kbcClient.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = kbcClient.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,10 +61,6 @@
 				420312712469868A006F721D /* Info.plist */,
 				420312722469868A006F721D /* main.m */,
 				420312742469868A006F721D /* screenshot.entitlements */,
-				4203127A2469929D006F721D /* kbcServer.cpp */,
-				4203127B2469929D006F721D /* kbcServer.hpp */,
-				4203127D24699867006F721D /* kbcClient.cpp */,
-				4203127E24699867006F721D /* kbcClient.hpp */,
 			);
 			path = screenshot;
 			sourceTree = "<group>";
@@ -145,9 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				420312732469868A006F721D /* main.m in Sources */,
-				4203127F24699867006F721D /* kbcClient.cpp in Sources */,
 				4203126B24698689006F721D /* AppDelegate.m in Sources */,
-				4203127C2469929D006F721D /* kbcServer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
