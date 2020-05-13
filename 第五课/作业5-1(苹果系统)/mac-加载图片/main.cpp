@@ -77,12 +77,38 @@ replace(char *array, int size) {
     // rgb[2] B 要与谁交换
 //    int rgb[3] = {0, 1, 0}; // a1.bgr.kbcimage
 //    int rgb[3] = {1, 2, 0}; // a1.kbcimage
-     int rgb[3] = {0, 1, 0}; //a2.bgr.kbcimage
 //     int rgb[3] = {0, 1, 0}; //a2.bgr.kbcimage
+    int rgb[3] = {0, 0, 0}; //a2.bgr.kbcimage
+
+  
+//    int rgb[3] = {0, 0, 0}; //a2.bgr.kbcimage
+//    int rgb[3] = {0, 1, 0}; //a2.bgr.kbcimage
+//    int rgb[3] = {0, 2, 0}; //a2.bgr.kbcimage
+//    int rgb[3] = {0, 1, 1}; //a2.bgr.kbcimage
+//    int rgb[3] = {0, 1, 2}; //a2.bgr.kbcimage
+//    int rgb[3] = {0, 2, 1}; //a2.bgr.kbcimage
+//    int rgb[3] = {0, 2, 2}; //a2.bgr.kbcimage
+//
+//    int rgb[3] = {1, 0, 0}; //a2.bgr.kbcimage
+//    int rgb[3] = {1, 1, 0}; //a2.bgr.kbcimage
+//    int rgb[3] = {1, 1, 1}; //a2.bgr.kbcimage
+//    int rgb[3] = {1, 1, 2}; //a2.bgr.kbcimage
+//    int rgb[3] = {1, 2, 0}; //a2.bgr.kbcimage
+//    int rgb[3] = {1, 2, 1}; //a2.bgr.kbcimage
+//    int rgb[3] = {1, 2, 2}; //a2.bgr.kbcimage
+//
+//    int rgb[3] = {2, 0, 0}; //a2.bgr.kbcimage
+//    int rgb[3] = {2, 1, 0}; //a2.bgr.kbcimage
+//    int rgb[3] = {2, 1, 1}; //a2.bgr.kbcimage
+//    int rgb[3] = {2, 1, 2}; //a2.bgr.kbcimage
+//    int rgb[3] = {2, 2, 0}; //a2.bgr.kbcimage
+//    int rgb[3] = {2, 2, 1}; //a2.bgr.kbcimage
+//    int rgb[3] = {2, 2, 2}; //a2.bgr.kbcimage
+
 //    cout << "rgb: " << rgb[0] << endl;
     for(int i = 0; i < s; i++) {
         if(i % 3 == 0 ) {
-            cout << "能被3整除: " << i << endl;
+//            cout << "能被3整除: " << i << endl;
             int r = rgb[0];
             int g = rgb[1];
             int b = rgb[2];
@@ -100,8 +126,8 @@ void
 loadImage(id imageView) {
 //    const char *path = "a1.kbcimage";
 //        const char *path = "a1.bgr.kbcimage";
-        const char *path = "a2.bgr.kbcimage";
-//        const char *path = "a2.brg.kbcimage";
+//        const char *path = "a2.bgr.kbcimage";
+        const char *path = "a2.brg.kbcimage";
     ifstream imageFile(path);
     
     // 读取 3 字节
