@@ -38,7 +38,7 @@ main(int argc, const char * argv[]) {
     guaCall(guaWindowInit)(window,
                            sel_registerName("initWithContentRect:styleMask:backing:defer:"),
                            // 下面是窗口的左上角坐标和宽高
-                           CGRectMake(100, 200, 300, 400),
+                           CGRectMake(1920- 500, 1080-400, 500, 400),
                            // 下面三个参数现在可以认为是固定的，不用关心
                            1, 2, NO
                            );

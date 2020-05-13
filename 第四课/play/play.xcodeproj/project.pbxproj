@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA2874FC246A95F4006EEB81 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2874FB246A95F4006EEB81 /* AudioToolbox.framework */; };
 		CAA064AD246A4D0D00F44C1D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CAA064AB246A4D0D00F44C1D /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CA2874FB246A95F4006EEB81 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CAA064A1246A4C7C00F44C1D /* play */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = play; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA064AB246A4D0D00F44C1D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CAA064AC246A4D0D00F44C1D /* main.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = main.hpp; sourceTree = "<group>"; };
@@ -33,17 +35,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA2874FC246A95F4006EEB81 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA2874FA246A95F4006EEB81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA2874FB246A95F4006EEB81 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CAA06498246A4C7C00F44C1D = {
 			isa = PBXGroup;
 			children = (
 				CAA064A3246A4C7C00F44C1D /* play */,
 				CAA064A2246A4C7C00F44C1D /* Products */,
+				CA2874FA246A95F4006EEB81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
