@@ -75,59 +75,31 @@ replace(char *array, int size) {
     // rgb[0] R 要与谁交换
     // rgb[1] G 要与谁交换
     // rgb[2] B 要与谁交换
+    
+//    int rgb[3] = {0, 2, 1}; // a1.kbcimage
 //    int rgb[3] = {0, 1, 0}; // a1.bgr.kbcimage
-//    int rgb[3] = {1, 2, 0}; // a1.kbcimage
-//     int rgb[3] = {0, 1, 0}; //a2.bgr.kbcimage
-    int rgb[3] = {0, 0, 0}; //a2.bgr.kbcimage
-
-  
-//    int rgb[3] = {0, 0, 0}; //a2.bgr.kbcimage
 //    int rgb[3] = {0, 1, 0}; //a2.bgr.kbcimage
-//    int rgb[3] = {0, 2, 0}; //a2.bgr.kbcimage
-//    int rgb[3] = {0, 1, 1}; //a2.bgr.kbcimage
-//    int rgb[3] = {0, 1, 2}; //a2.bgr.kbcimage
-//    int rgb[3] = {0, 2, 1}; //a2.bgr.kbcimage
-//    int rgb[3] = {0, 2, 2}; //a2.bgr.kbcimage
-//
-//    int rgb[3] = {1, 0, 0}; //a2.bgr.kbcimage
-//    int rgb[3] = {1, 1, 0}; //a2.bgr.kbcimage
-//    int rgb[3] = {1, 1, 1}; //a2.bgr.kbcimage
-//    int rgb[3] = {1, 1, 2}; //a2.bgr.kbcimage
-//    int rgb[3] = {1, 2, 0}; //a2.bgr.kbcimage
-//    int rgb[3] = {1, 2, 1}; //a2.bgr.kbcimage
-//    int rgb[3] = {1, 2, 2}; //a2.bgr.kbcimage
-//
-//    int rgb[3] = {2, 0, 0}; //a2.bgr.kbcimage
-//    int rgb[3] = {2, 1, 0}; //a2.bgr.kbcimage
-//    int rgb[3] = {2, 1, 1}; //a2.bgr.kbcimage
-//    int rgb[3] = {2, 1, 2}; //a2.bgr.kbcimage
-//    int rgb[3] = {2, 2, 0}; //a2.bgr.kbcimage
-//    int rgb[3] = {2, 2, 1}; //a2.bgr.kbcimage
-//    int rgb[3] = {2, 2, 2}; //a2.bgr.kbcimage
-
-//    cout << "rgb: " << rgb[0] << endl;
+      int rgb[3] = {0, 2, 0}; //a2.bgr.kbcimage
+  
     for(int i = 0; i < s; i++) {
         if(i % 3 == 0 ) {
-//            cout << "能被3整除: " << i << endl;
-            int r = rgb[0];
-            int g = rgb[1];
-            int b = rgb[2];
-//           swap(array[i], array[i + t]);
+            int r = rgb[0] + i;
+            int g = rgb[1] + i;
+            int b = rgb[2] + i;
              swap(array[i], array[r]);
              swap(array[i + 1], array[g]);
              swap(array[i + 2], array[b]);
         }
 
-//        cout << "交换后： " << array[i + t] << endl;
     }
 }
 
 void
 loadImage(id imageView) {
-//    const char *path = "a1.kbcimage";
-//        const char *path = "a1.bgr.kbcimage";
-//        const char *path = "a2.bgr.kbcimage";
-        const char *path = "a2.brg.kbcimage";
+//  const char *path = "a1.kbcimage";
+//  const char *path = "a1.bgr.kbcimage";
+//  const char *path = "a2.bgr.kbcimage";
+    const char *path = "a2.brg.kbcimage";
     ifstream imageFile(path);
     
     // 读取 3 字节
@@ -145,9 +117,7 @@ loadImage(id imageView) {
     // 请参考本项目的  项目说明.md  文件把像素读到 data 中
     
     //改变rgb排列
-    cout << "交换前： " << data[10] << endl;
     replace(data, size);
-    cout << "交换后： " << data[10]<< endl;
     
     // 当你把像素都读取到 data 中之后，下面的代码会画出这张图
     CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, data, size, NULL);
@@ -223,7 +193,7 @@ main(int argc, const char * argv[]) {
     guaCall(guaWindowInit)(window,
                            sel_registerName("initWithContentRect:styleMask:backing:defer:"),
                            // 下面是窗口的左上角坐标和宽高
-                           CGRectMake(100, 200, 300, 400),
+                           CGRectMake(1200, 800, 200, 200),
                            // 下面三个参数现在可以认为是固定的，不用关心
                            1, 2, NO
                            );
