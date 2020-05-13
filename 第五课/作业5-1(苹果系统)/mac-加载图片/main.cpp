@@ -60,7 +60,7 @@ typedef id (*guaInitImage)(id, SEL, CGImageRef, CGSize);
 #define _s(s) (id)CFSTR(#s)
 
 void
-swap(char s1, char s2) {
+swap(char &s1, char &s2) {
     char t;
     t = s1; //缓存s1
     s1 = s2; // s1 改变
@@ -70,20 +70,28 @@ swap(char s1, char s2) {
 
 void
 replace(char *array, int size) {
-    int  s = size / 3;
+    int  s = size;
     // rgb 要交换的方式 0代表交换自己。1代表交换G  2代表交换B
     // rgb[0] R 要与谁交换
     // rgb[1] G 要与谁交换
     // rgb[2] B 要与谁交换
-    int rgb[3] = {1, 2, 0};
+//    int rgb[3] = {0, 1, 0}; // a1.bgr.kbcimage
+//    int rgb[3] = {1, 2, 0}; // a1.kbcimage
+     int rgb[3] = {0, 1, 0}; //a2.bgr.kbcimage
+//     int rgb[3] = {0, 1, 0}; //a2.bgr.kbcimage
 //    cout << "rgb: " << rgb[0] << endl;
     for(int i = 0; i < s; i++) {
-//        cout << "数据导出:"<< array[i] << endl;
-        int t = rgb[1];
-//        cout << "R : " << array[i] << ":" << array[i + t]<< endl;
-    
-//        cout << "交换前： " << array[i] << endl;
-        swap(array[i], array[i + t]);
+        if(i % 3 == 0 ) {
+            cout << "能被3整除: " << i << endl;
+            int r = rgb[0];
+            int g = rgb[1];
+            int b = rgb[2];
+//           swap(array[i], array[i + t]);
+             swap(array[i], array[r]);
+             swap(array[i + 1], array[g]);
+             swap(array[i + 2], array[b]);
+        }
+
 //        cout << "交换后： " << array[i + t] << endl;
     }
 }
@@ -91,8 +99,8 @@ replace(char *array, int size) {
 void
 loadImage(id imageView) {
 //    const char *path = "a1.kbcimage";
-        const char *path = "a1.bgr.kbcimage";
-//        const char *path = "a2.bgr.kbcimage";
+//        const char *path = "a1.bgr.kbcimage";
+        const char *path = "a2.bgr.kbcimage";
 //        const char *path = "a2.brg.kbcimage";
     ifstream imageFile(path);
     
