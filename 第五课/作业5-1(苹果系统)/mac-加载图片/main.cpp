@@ -82,7 +82,9 @@ replace(char *array, int size) {
         int t = rgb[1];
 //        cout << "R : " << array[i] << ":" << array[i + t]<< endl;
     
+//        cout << "交换前： " << array[i] << endl;
         swap(array[i], array[i + t]);
+//        cout << "交换后： " << array[i + t] << endl;
     }
 }
 
@@ -109,8 +111,9 @@ loadImage(id imageView) {
     // 请参考本项目的  项目说明.md  文件把像素读到 data 中
     
     //改变rgb排列
+    cout << "交换前： " << data[10] << endl;
     replace(data, size);
-    
+    cout << "交换后： " << data[10]<< endl;
     
     // 当你把像素都读取到 data 中之后，下面的代码会画出这张图
     CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, data, size, NULL);
