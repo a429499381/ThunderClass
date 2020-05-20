@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		426EAD732475690A00335483 /* SocketClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 426EAD712475690A00335483 /* SocketClient.cpp */; };
 		4276BD14245C5829009F13F0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4276BD10245C5829009F13F0 /* main.cpp */; };
-		4276BD15245C5829009F13F0 /* kbcClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4276BD11245C5829009F13F0 /* kbcClient.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,11 +24,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		423E76212470477E008DFD68 /* a1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = a1.png; path = "../../../第五课/作业5-1(苹果系统)/mac-加载图片/a1.png"; sourceTree = "<group>"; };
+		423E762224704974008DFD68 /* a2.brg.kbcimage */ = {isa = PBXFileReference; lastKnownFileType = text; name = a2.brg.kbcimage; path = "../../../第五课/作业5-1(苹果系统)/mac-加载图片/a2.brg.kbcimage"; sourceTree = "<group>"; };
+		426EAD712475690A00335483 /* SocketClient.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SocketClient.cpp; sourceTree = "<group>"; };
+		426EAD722475690A00335483 /* SocketClient.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SocketClient.hpp; sourceTree = "<group>"; };
 		4276BCFD245C4B93009F13F0 /* 2-socket-client */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "2-socket-client"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4276BD0F245C5829009F13F0 /* kbcClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kbcClient.h; sourceTree = "<group>"; };
 		4276BD10245C5829009F13F0 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		4276BD11245C5829009F13F0 /* kbcClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = kbcClient.cpp; sourceTree = "<group>"; };
-		4276BD12245C5829009F13F0 /* kbcSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kbcSocket.h; sourceTree = "<group>"; };
 		4276BD13245C5829009F13F0 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,11 +63,12 @@
 		4276BD07245C4BE3009F13F0 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				4276BD11245C5829009F13F0 /* kbcClient.cpp */,
-				4276BD0F245C5829009F13F0 /* kbcClient.h */,
-				4276BD12245C5829009F13F0 /* kbcSocket.h */,
+				423E762224704974008DFD68 /* a2.brg.kbcimage */,
+				423E76212470477E008DFD68 /* a1.png */,
 				4276BD10245C5829009F13F0 /* main.cpp */,
 				4276BD13245C5829009F13F0 /* utils.h */,
+				426EAD712475690A00335483 /* SocketClient.cpp */,
+				426EAD722475690A00335483 /* SocketClient.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -129,7 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4276BD14245C5829009F13F0 /* main.cpp in Sources */,
-				4276BD15245C5829009F13F0 /* kbcClient.cpp in Sources */,
+				426EAD732475690A00335483 /* SocketClient.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

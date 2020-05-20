@@ -50,7 +50,7 @@ server() {
 
 		// 在这个示例服务器程序中，我们对每个连接只接受最多 100 个字节的数据
 		// 然后就不管这个连接了
-		const int size = 100;
+		const int size = 50 * 40 * 3;
 		// 用 new 申请 size 字节的内存
 		char* buff = new char[size];
 		size_t n = recv(connection, buff, size, 0);

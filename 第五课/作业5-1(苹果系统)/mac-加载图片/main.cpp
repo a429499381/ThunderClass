@@ -27,6 +27,7 @@
 #include <string>
 #include <sstream>
 
+#include "SocketClient.hpp"
 
 using namespace std;
 
@@ -99,6 +100,8 @@ loadImage(id imageView) {
 //  const char *path = "a1.kbcimage";
 //  const char *path = "a1.bgr.kbcimage";
 //  const char *path = "a2.bgr.kbcimage";
+    SockentClient *send = new SockentClient();
+    
     const char *path = "a2.brg.kbcimage";
     ifstream imageFile(path);
     
@@ -118,6 +121,9 @@ loadImage(id imageView) {
     
     //改变rgb排列
     replace(data, size);
+    
+    // 发送数据
+    send->client(data);
     
     // 当你把像素都读取到 data 中之后，下面的代码会画出这张图
     CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, data, size, NULL);

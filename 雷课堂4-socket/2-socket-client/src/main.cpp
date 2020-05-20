@@ -1,9 +1,9 @@
-#include "utils.h"
-#include "kbcClient.h"
-
+#include "SocketClient.hpp"
 
 int 
 main() {
-    log("2 client ");
-    client();
+    SockentClient *S1 = new SockentClient();
+    const char *data = "KuaiBianCheng.com";
+  
+    S1->client(data);
 }

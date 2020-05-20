@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		426EAD7624756F7500335483 /* SocketClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 426EAD7424756F7500335483 /* SocketClient.cpp */; };
 		428C5AF6246ADAA300B99DB7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 428C5AF5246ADAA300B99DB7 /* main.cpp */; };
 		428C5AFF246ADBE600B99DB7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 428C5AFE246ADBE600B99DB7 /* Cocoa.framework */; };
 		428C5B07246AE32700B99DB7 /* a1.kbcimage in CopyFiles */ = {isa = PBXBuildFile; fileRef = 428C5B05246AE32000B99DB7 /* a1.kbcimage */; };
@@ -36,6 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		426EAD7424756F7500335483 /* SocketClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SocketClient.cpp; path = "../../../雷课堂4-socket/2-socket-client/src/SocketClient.cpp"; sourceTree = "<group>"; };
+		426EAD7524756F7500335483 /* SocketClient.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = SocketClient.hpp; path = "../../../雷课堂4-socket/2-socket-client/src/SocketClient.hpp"; sourceTree = "<group>"; };
 		428C5AF2246ADAA300B99DB7 /* mac-加载图片 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "mac-加载图片"; sourceTree = BUILT_PRODUCTS_DIR; };
 		428C5AF5246ADAA300B99DB7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		428C5AFE246ADBE600B99DB7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -82,6 +85,8 @@
 		428C5AF4246ADAA300B99DB7 /* mac-加载图片 */ = {
 			isa = PBXGroup;
 			children = (
+				426EAD7424756F7500335483 /* SocketClient.cpp */,
+				426EAD7524756F7500335483 /* SocketClient.hpp */,
 				428C5B09246AE4B700B99DB7 /* 项目说明.md */,
 				428C5B01246ADD8D00B99DB7 /* a1.png */,
 				428C5B02246ADD8E00B99DB7 /* a2.png */,
@@ -162,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				428C5AF6246ADAA300B99DB7 /* main.cpp in Sources */,
+				426EAD7624756F7500335483 /* SocketClient.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

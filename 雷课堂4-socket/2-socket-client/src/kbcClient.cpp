@@ -3,6 +3,24 @@
 
 #include "utils.h"
 
+#include <objc/objc.h>
+#include <objc/objc-runtime.h>
+#include <objc/message.h>
+
+#include <CoreGraphics/CoreGraphics.h>
+#include <CoreFoundation/CoreFoundation.h>
+
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <netinet/tcp.h>
+
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+
+using namespace std;
 
 void
 client() {
@@ -22,8 +40,16 @@ client() {
     connect(socketId, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
     // data 有 17 个字符，末尾还有一个看不到的 0 表示字符串结尾
     // 所以 size 要加上这个 0 发出去
-    const char *data = "KuaiBianCheng.com";
-    size_t size = strlen(data) + 1;
+    const char *path = "a2.brg.kbcimage";
+    ifstream imageFile(path);
+    const int size = 50 * 40 * 3;
+    char *data = new char[size];
+    imageFile.read(data, 3);
+    
+    cout << "data" << data[0] << endl;
+    
+//    const char *data = "KuaiBianCheng.com";
+//    size_t size = strlen(data) + 1;
     int n = send(socketId, data, size, 0);
     log("send size ", n);
 }

@@ -24,7 +24,7 @@
     CGDataProviderRef provider =  CGImageGetDataProvider(img);
     CFDataRef imageData = CGDataProviderCopyData(provider);
     uint8_t *bytes = (uint8_t *)CFDataGetBytePtr(imageData);
-
+    
 
     NSImage *image = [[NSImage alloc] initWithCGImage:img size:(NSZeroSize)];
     NSImageView *imgView = [NSImageView imageViewWithImage:image];
