@@ -28,6 +28,7 @@
 #include <sstream>
 
 #include "SocketClient.hpp"
+#include "readImage.hpp"
 
 using namespace std;
 
@@ -101,26 +102,34 @@ loadImage(id imageView) {
 //  const char *path = "a1.bgr.kbcimage";
 //  const char *path = "a2.bgr.kbcimage";
     SockentClient *send = new SockentClient();
-    
+    ReadImage *readImage = new ReadImage();
+    int size;
+    int w = 238;
+    int h = 238;
+    char *data;
     const char *path = "a2.brg.kbcimage";
-    ifstream imageFile(path);
     
-    // 读取 3 字节
-    // .kbcimage 的前 3 个字节分别是文件版本和图像的 w 和 h
-    char *imageInfo = new char[3];
-    imageFile.read(imageInfo, 3);
-    int w = (unsigned char)imageInfo[1];
-    int h = (unsigned char)imageInfo[2];
-    cout << "image w and h " << w << " " << h << endl;
-
-    const int size = w * h * 3;
-    char *data = new char[size];
-    imageFile.read(data, size);
-    // 接下来你需要用 imageFile.read 读出所有的像素并显示出来
-    // 请参考本项目的  项目说明.md  文件把像素读到 data 中
+    readImage->read(path, data, size);
     
-    //改变rgb排列
-    replace(data, size);
+//    const char *path = "a2.brg.kbcimage";
+//    ifstream imageFile(path);
+//
+//    // 读取 3 字节
+//    // .kbcimage 的前 3 个字节分别是文件版本和图像的 w 和 h
+//    char *imageInfo = new char[3];
+//    imageFile.read(imageInfo, 3);
+//    int w = (unsigned char)imageInfo[1];
+//    int h = (unsigned char)imageInfo[2];
+//    cout << "image w and h " << w << " " << h << endl;
+//
+//    const int size = w * h * 3;
+//    char *data = new char[size];
+//    imageFile.read(data, size);
+//    // 接下来你需要用 imageFile.read 读出所有的像素并显示出来
+//    // 请参考本项目的  项目说明.md  文件把像素读到 data 中
+//
+//    //改变rgb排列
+//    replace(data, size);
     
     // 发送数据
     send->client(data);
