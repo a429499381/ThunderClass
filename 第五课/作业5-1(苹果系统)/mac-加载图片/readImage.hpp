@@ -16,6 +16,8 @@
 #include <string>
 #include <sstream>
 
+#include "dataStruct.h"
+
 #endif /* readImage_hpp */
 
 using namespace std;
@@ -57,8 +59,9 @@ public:
         }
     }
     
-   void
-    read(const char *path, char *str, int size) {
+   te
+    read(const char *path) {
+            te imageD; // 使用结构体
 //            const char *path = "a2.brg.kbcimage";
               ifstream imageFile(path);
               
@@ -70,17 +73,25 @@ public:
               int h = (unsigned char)imageInfo[2];
               cout << "image w and h " << w << " " << h << endl;
 
-              size = w * h * 3;
+              int size = w * h * 3;
               char *data = new char[size];
-               *str = *data; // 报错
               imageFile.read(data, size);
               // 接下来你需要用 imageFile.read 读出所有的像素并显示出来
               // 请参考本项目的  项目说明.md  文件把像素读到 data 中
               
               //改变rgb排列
               replace(data, size);
+        
+            imageD.data = data;
+            imageD.w = w;
+            imageD.h = h;
+            imageD.size = size;
+             
+        
+            cout << "imageD.w :  " << imageD.size << endl;
+            return imageD;
               
-    }
+    };
     
    
     

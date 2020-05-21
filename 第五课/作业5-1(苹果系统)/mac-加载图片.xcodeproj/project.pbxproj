@@ -42,6 +42,7 @@
 		426EAD7524756F7500335483 /* SocketClient.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = SocketClient.hpp; path = "../../../雷课堂4-socket/2-socket-client/src/SocketClient.hpp"; sourceTree = "<group>"; };
 		426EAD7B2475845700335483 /* readImage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = readImage.cpp; sourceTree = "<group>"; };
 		426EAD7C2475845700335483 /* readImage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = readImage.hpp; sourceTree = "<group>"; };
+		426EAD7E2476DEAC00335483 /* dataStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dataStruct.h; sourceTree = "<group>"; };
 		428C5AF2246ADAA300B99DB7 /* mac-加载图片 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "mac-加载图片"; sourceTree = BUILT_PRODUCTS_DIR; };
 		428C5AF5246ADAA300B99DB7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		428C5AFE246ADBE600B99DB7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -101,6 +102,7 @@
 				428C5B0A246AE77200B99DB7 /* a2.brg.kbcimage */,
 				428C5AF5246ADAA300B99DB7 /* main.cpp */,
 				426EAD7B2475845700335483 /* readImage.cpp */,
+				426EAD7E2476DEAC00335483 /* dataStruct.h */,
 				426EAD7C2475845700335483 /* readImage.hpp */,
 			);
 			path = "mac-加载图片";
