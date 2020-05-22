@@ -88,34 +88,38 @@ loadImage(id imageView) {
     data = t.data;
     
     // 获取屏幕数据
-    uint8_t *s = screen->getScreenData(100, 200);
+    uint8_t *s = screen->getScreenData(w, h);
     cout << "screen:   " << s << endl;
 //    cout << "te t:  " << t.w << endl;
     
     // 发送数据
-    send->client(data);
+//    send->client((char*)s);
     
-    // 当你把像素都读取到 data 中之后，下面的代码会画出这张图
-    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, data, size, NULL);
-    CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceRGB();
-    CGImageRef cgimage = CGImageCreate(w,       // 图像宽
-                                       h,       // 图像高
-                                       8,       // 每个颜色分量（比如 R）的位数
-                                       24,      // 每个像素的位数，我们是 RGB 颜色，所以是 8 * 3 = 24 位
-                                       w * 3,   // 每行像素的字节数
-                                       // 剩下的都是套路参数
-                                       colorSpaceRef,
-                                       kCGBitmapByteOrder32Big | kCGImageAlphaNone,
-                                       provider, NULL, true, kCGRenderingIntentDefault);
+    // 主线程更新ui
+    dispatch_sync(dispatch_get_main_queue(), ^{
+            // 当你把像素都读取到 data 中之后，下面的代码会画出这张图
+        CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, data, size, NULL);
+        CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceRGB();
+        CGImageRef cgimage = CGImageCreate(w,       // 图像宽
+                                           h,       // 图像高
+                                           8,       // 每个颜色分量（比如 R）的位数
+                                           24,      // 每个像素的位数，我们是 RGB 颜色，所以是 8 * 3 = 24 位
+                                           w * 3,   // 每行像素的字节数
+                                           // 剩下的都是套路参数
+                                           colorSpaceRef,
+                                           kCGBitmapByteOrder32Big | kCGImageAlphaNone,
+                                           provider, NULL, true, kCGRenderingIntentDefault);
+        
+        // 让 imageView 显示新的图片
+        id img = guaCall(guaSend)(cls(NSImage), sel(alloc));
+        guaCall(guaInitImage)(img, sel(initWithCGImage:size:), cgimage, CGSizeZero);
+        guaCall(guaCallId1)(imageView, sel(setImage:), img);
+        
+        // free memory
+        CGImageRelease(cgimage);
+        CGDataProviderRelease(provider);
+    });
     
-    // 让 imageView 显示新的图片
-    id img = guaCall(guaSend)(cls(NSImage), sel(alloc));
-    guaCall(guaInitImage)(img, sel(initWithCGImage:size:), cgimage, CGSizeZero);
-    guaCall(guaCallId1)(imageView, sel(setImage:), img);
-    
-    // free memory
-    CGImageRelease(cgimage);
-    CGDataProviderRelease(provider);
 }
 
 void
@@ -205,8 +209,11 @@ main(int argc, const char * argv[]) {
     id view = guaCall(guaSend)(window, sel(contentView));
     guaCall(guaCallId1)(view, sel(addSubview:), imageView);
 
-    // 加载图片并显示
-    loadImage(imageView);
+    // 加载图片并显示  // 多线程
+    dispatch_sync(dispatch_get_global_queue(0, 0), ^{
+        loadImage(imageView);
+    });
+    
 
     // 相当于 app.run()，这样程序就运行起来了
     // run 会阻塞在这里（意思是 run 不会返回）

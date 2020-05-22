@@ -30,7 +30,8 @@ public:
            CGDataProviderRef provider =  CGImageGetDataProvider(img);
            CFDataRef imageData = CGDataProviderCopyData(provider);
            uint8_t *bytes = (uint8_t *)CFDataGetBytePtr(imageData);
-       
+
+            
            return bytes;
     }
 };

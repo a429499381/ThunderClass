@@ -17,7 +17,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    CGImageRef img = CGWindowListCreateImage(CGRectMake(10, 70, 20, 20), kCGWindowListOptionOnScreenOnly,
+    CGImageRef img = CGWindowListCreateImage(CGRectMake(10, 70, 800, 600), kCGWindowListOptionOnScreenOnly,
     kCGNullWindowID, kCGWindowImageDefault);
 
     // 拿到原始像素数据

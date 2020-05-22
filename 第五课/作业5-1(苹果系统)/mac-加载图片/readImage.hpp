@@ -56,6 +56,33 @@ public:
             return imageD;
               
     };
+
+
+    void
+    replace(char *array, int size) {
+        int  s = size;
+        // rgb 要交换的方式 0代表交换自己。1代表交换G  2代表交换B
+        // rgb[0] R 要与谁交换
+        // rgb[1] G 要与谁交换
+        // rgb[2] B 要与谁交换
+        
+    //    int rgb[3] = {0, 2, 1}; // a1.kbcimage
+    //    int rgb[3] = {0, 1, 0}; // a1.bgr.kbcimage
+    //    int rgb[3] = {0, 1, 0}; //a2.bgr.kbcimage
+          int rgb[3] = {0, 2, 0}; //a2.bgr.kbcimage
+      
+        for(int i = 0; i < s; i++) {
+            if(i % 3 == 0 ) {
+                int r = rgb[0] + i;
+                int g = rgb[1] + i;
+                int b = rgb[2] + i;
+                 swap(array[i], array[r]);
+                 swap(array[i + 1], array[g]);
+                 swap(array[i + 2], array[b]);
+            }
+
+        }
+    }
 private:
     void
       swap(char &s1, char &s2) {
@@ -64,33 +91,33 @@ private:
           s1 = s2; // s1 改变
           s2 = t; //  s2 改变
       }
-
-
-      void
-      replace(char *array, int size) {
-          int  s = size;
-          // rgb 要交换的方式 0代表交换自己。1代表交换G  2代表交换B
-          // rgb[0] R 要与谁交换
-          // rgb[1] G 要与谁交换
-          // rgb[2] B 要与谁交换
-          
-      //    int rgb[3] = {0, 2, 1}; // a1.kbcimage
-      //    int rgb[3] = {0, 1, 0}; // a1.bgr.kbcimage
-      //    int rgb[3] = {0, 1, 0}; //a2.bgr.kbcimage
-            int rgb[3] = {0, 2, 0}; //a2.bgr.kbcimage
-        
-          for(int i = 0; i < s; i++) {
-              if(i % 3 == 0 ) {
-                  int r = rgb[0] + i;
-                  int g = rgb[1] + i;
-                  int b = rgb[2] + i;
-                   swap(array[i], array[r]);
-                   swap(array[i + 1], array[g]);
-                   swap(array[i + 2], array[b]);
-              }
-
-          }
-      }
+//
+//
+//      void
+//      replace(char *array, int size) {
+//          int  s = size;
+//          // rgb 要交换的方式 0代表交换自己。1代表交换G  2代表交换B
+//          // rgb[0] R 要与谁交换
+//          // rgb[1] G 要与谁交换
+//          // rgb[2] B 要与谁交换
+//
+//      //    int rgb[3] = {0, 2, 1}; // a1.kbcimage
+//      //    int rgb[3] = {0, 1, 0}; // a1.bgr.kbcimage
+//      //    int rgb[3] = {0, 1, 0}; //a2.bgr.kbcimage
+//            int rgb[3] = {0, 2, 0}; //a2.bgr.kbcimage
+//
+//          for(int i = 0; i < s; i++) {
+//              if(i % 3 == 0 ) {
+//                  int r = rgb[0] + i;
+//                  int g = rgb[1] + i;
+//                  int b = rgb[2] + i;
+//                   swap(array[i], array[r]);
+//                   swap(array[i + 1], array[g]);
+//                   swap(array[i + 2], array[b]);
+//              }
+//
+//          }
+//      }
    
     
     
