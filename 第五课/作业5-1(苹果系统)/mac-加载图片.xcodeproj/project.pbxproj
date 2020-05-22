@@ -18,6 +18,7 @@
 		428C5B10246AE78400B99DB7 /* a2.bgr.kbcimage in CopyFiles */ = {isa = PBXBuildFile; fileRef = 428C5B0D246AE77300B99DB7 /* a2.bgr.kbcimage */; };
 		428C5B11246AE78400B99DB7 /* a2.brg.kbcimage in CopyFiles */ = {isa = PBXBuildFile; fileRef = 428C5B0A246AE77200B99DB7 /* a2.brg.kbcimage */; };
 		CA4A9F3C247757A500C5A680 /* screenShot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CA4A9F3A247757A500C5A680 /* screenShot.cpp */; };
+		CA4A9F3F2477A74500C5A680 /* Compress.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CA4A9F3D2477A74500C5A680 /* Compress.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +59,8 @@
 		428C5B0D246AE77300B99DB7 /* a2.bgr.kbcimage */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = a2.bgr.kbcimage; sourceTree = "<group>"; };
 		CA4A9F3A247757A500C5A680 /* screenShot.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = screenShot.cpp; sourceTree = "<group>"; };
 		CA4A9F3B247757A500C5A680 /* screenShot.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = screenShot.hpp; sourceTree = "<group>"; };
+		CA4A9F3D2477A74500C5A680 /* Compress.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Compress.cpp; sourceTree = "<group>"; };
+		CA4A9F3E2477A74500C5A680 /* Compress.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Compress.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 				426EAD7C2475845700335483 /* readImage.hpp */,
 				CA4A9F3A247757A500C5A680 /* screenShot.cpp */,
 				CA4A9F3B247757A500C5A680 /* screenShot.hpp */,
+				CA4A9F3D2477A74500C5A680 /* Compress.cpp */,
+				CA4A9F3E2477A74500C5A680 /* Compress.hpp */,
 			);
 			path = "mac-加载图片";
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				428C5AF6246ADAA300B99DB7 /* main.cpp in Sources */,
+				CA4A9F3F2477A74500C5A680 /* Compress.cpp in Sources */,
 				CA4A9F3C247757A500C5A680 /* screenShot.cpp in Sources */,
 				426EAD7D2475845700335483 /* readImage.cpp in Sources */,
 				426EAD7624756F7500335483 /* SocketClient.cpp in Sources */,

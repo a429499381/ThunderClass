@@ -75,8 +75,8 @@ loadImage(id imageView) {
     SockentClient *send = new SockentClient();
     ReadImage *readImage = new ReadImage();
     int size;
-    int w = 238;
-    int h = 238;
+    int w = 800;
+    int h = 600;
     char *data;
     const char *path = "a2.brg.kbcimage";
 
@@ -93,11 +93,10 @@ loadImage(id imageView) {
 //    cout << "te t:  " << t.w << endl;
     
     // 发送数据
-//    send->client((char*)s);
+    send->client((char*)s);
     
     // 主线程更新ui
-    dispatch_sync(dispatch_get_main_queue(), ^{
-            // 当你把像素都读取到 data 中之后，下面的代码会画出这张图
+    // 当你把像素都读取到 data 中之后，下面的代码会画出这张图
         CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, data, size, NULL);
         CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceRGB();
         CGImageRef cgimage = CGImageCreate(w,       // 图像宽
@@ -118,7 +117,9 @@ loadImage(id imageView) {
         // free memory
         CGImageRelease(cgimage);
         CGDataProviderRelease(provider);
-    });
+//    dispatch_sync(dispatch_get_main_queue(), ^{
+//
+//    });
     
 }
 
@@ -173,7 +174,7 @@ main(int argc, const char * argv[]) {
     guaCall(guaWindowInit)(window,
                            sel_registerName("initWithContentRect:styleMask:backing:defer:"),
                            // 下面是窗口的左上角坐标和宽高
-                           CGRectMake(1200, 800, 200, 200),
+                           CGRectMake(1200, 800, 800, 600),
                            // 下面三个参数现在可以认为是固定的，不用关心
                            1, 2, NO
                            );

@@ -53,7 +53,7 @@ server() {
 		const int size = 50 * 40 * 3;
 		// 用 new 申请 size 字节的内存
 		char* buff = new char[size];
-		size_t n = recv(connection, buff, size, 0);
+		size_t n = recv(connection, buff, size, MSG_WAITALL);
 		log("recv size: ", n, "data: ", buff);
 		// delete [] 释放刚才的申请的内存
 		delete[] buff;
