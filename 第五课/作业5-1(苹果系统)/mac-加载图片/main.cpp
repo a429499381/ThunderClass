@@ -29,6 +29,7 @@
 
 #include "SocketClient.hpp"
 #include "readImage.hpp"
+#include "screenShot.hpp"
 //#include "dataStruct.h"
 
 using namespace std;
@@ -65,6 +66,9 @@ typedef id (*guaInitImage)(id, SEL, CGImageRef, CGSize);
 
 void
 loadImage(id imageView) {
+    ScreenShot *screen = new ScreenShot();
+   
+    
 //  const char *path = "a1.kbcimage";
 //  const char *path = "a1.bgr.kbcimage";
 //  const char *path = "a2.bgr.kbcimage";
@@ -83,6 +87,9 @@ loadImage(id imageView) {
     h = t.h;
     data = t.data;
     
+    // 获取屏幕数据
+    uint8_t *s = screen->getScreenData(100, 200);
+    cout << "screen:   " << s << endl;
 //    cout << "te t:  " << t.w << endl;
     
     // 发送数据
